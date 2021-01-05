@@ -8,3 +8,16 @@ node default {
 node 'master.puppet.vm' {
   include role::master_server
 }
+
+node 'node.puppet.vm' {
+   package { 'httpd':
+     ensure => present,
+     name   => httpd,
+   }
+   
+   service { 'httpd':
+     ensure => running,
+     name   => httpd,
+     enable => true,
+   }   
+}
