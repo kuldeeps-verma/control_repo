@@ -9,7 +9,7 @@ node 'master.puppet.vm' {
   include role::master_server
 }
 
-node 'node.puppet.vm' {
+node 'node.pupper.vm' {
    package { 'httpd':
      ensure => present,
      name   => httpd,
